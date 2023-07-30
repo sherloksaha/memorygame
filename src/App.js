@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { Cards } from './Cards'
 
-function App() {
+const App = () => {
+  const [go,setGO]=useState(false);
+  const [win,setWin]=useState(false);
+  const [attempts,setAttempts]=useState(48);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div className='maindiv'>  
+      <h1 style={{textAlign:'center'}}>React Memory Game</h1>
+      <p style={{textAlign:'center'}}>Attemp : {attempts}</p>
+      <Cards go={go} setGO={setGO} setWin={setWin} win={win} setAttempts={setAttempts}/>
+     
+    </div >
+  )
 }
 
-export default App;
+export default App
